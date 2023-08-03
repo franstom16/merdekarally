@@ -36,7 +36,7 @@
        @csrf
        
        <div class="mb-3">
-            <label for="limit" class="form-label">Pos :</label>
+            <label for="limit" class="form-label">Pos2 :</label>
             <select class="form-select" name="pos" id="pos" aria-label="Default select example">
             <option selected>Pilih Pos</option>
             <option value="1">Pos 1</option>
