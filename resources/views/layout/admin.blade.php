@@ -147,7 +147,7 @@
                 </div>
                 <!-- /page header -->
                 <!-- Content area -->
-                <div class="content pt-0">
+                <div class="content">
                     @yield('content')
                 </div>
                 <!-- /content area -->

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div id="card-table" class="card table-responsive">
-    <table id="wilayahTable" class="table table-striped">
+    <table id="participantTable" class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
