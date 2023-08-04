@@ -31,4 +31,14 @@ class ParticipantsController extends Controller
     {
         return $this->participantRepo->getDataTable(['_token' => $request->_token]);
     }
+
+    public function import()
+    {
+        return view('participants.import', ['page_act' => 'participants']);
+    }
+
+    public function importData(Request $request)
+    {
+        return $this->participantRepo->importData($request);
+    }
 }
