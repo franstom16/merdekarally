@@ -61,8 +61,6 @@ const LoginJs = function() {
                     url: e.action,
                     data: $(e).serialize(),
                     success: function(res) {
-                        alert('b')
-                        console.log(res)
                         if (res.success !== undefined) {
                             result.message = 'Login Success'
                             notifType = 'success'
@@ -77,12 +75,11 @@ const LoginJs = function() {
                         $('.spinner-border').hide()
                         $('#btn-submit').attr('disabled', false)
                         setTimeout(function() {
+                            alert(main_url)
                             window.location.href = main_url
                         }, 200)
                     },
                     error: function(e) {
-                        alert('a')
-                        console.log(e)
                         if (e.responseJSON.errors !== undefined && e.responseJSON.errors.error_msg) {
                             result.message = e.responseJSON.errors.error_msg
                         } else {
