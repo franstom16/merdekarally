@@ -1,3 +1,7 @@
+@php 
+    $user = auth()->user();
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -6,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'Laravele') }}</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- Global stylesheets -->
         <link href="{{ asset('css/googleapis-roboto.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('plugins/icons/icomoon/styles.min.css') }}" rel="stylesheet" type="text/css">
@@ -112,7 +116,7 @@
                                 <a href="#">
                                     <img src="{{ asset('img/avatar.png') }}" class="img-fluid rounded-circle shadow-1 mb-3" width="80" height="80" alt="">
                                 </a>
-                                <h6 class="mb-0 text-white text-shadow-dark">Victoria Baker</h6>
+                                <h6 class="mb-0 text-white text-shadow-dark">{{ $user->fullname ?? '' }}</h6>
                             </div>
                                                         
                             <div class="sidebar-user-material-footer">
