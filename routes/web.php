@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'participants'], function() {
-    Route::get('get-data', 'ParticipantsController@getDataTable');
+    Route::post('get-data', 'ParticipantsController@getDataTable');
     Route::get('/', 'ParticipantsController@index');
 });
 
