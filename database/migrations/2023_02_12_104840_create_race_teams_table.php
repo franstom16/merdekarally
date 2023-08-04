@@ -13,15 +13,11 @@ class CreateParticipantsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('participants');
-        Schema::create('participants', function (Blueprint $table) {
+        Schema::dropIfExists('race_teams');
+        Schema::create('race_teams', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('team_id');
-            $table->string('participant_name');
-            $table->string('participant_code')->unique();
-            $table->string('race_category')->nullable();
-            $table->string('race_class');
-            $table->string('blood')->nullable();
+            $table->string('team_name');
+            $table->string('team_code')->unique()->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateParticipantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participants');
+        Schema::dropIfExists('race_teams');
     }
 }
