@@ -2,23 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Validation\Rule;
 
-class participant extends Authenticatable
+class Participant extends Model
 {
-    use HasApiTokens, HasFactory;
-    protected $guarded = [''];
-    
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 }
