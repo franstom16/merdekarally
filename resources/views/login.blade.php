@@ -29,7 +29,7 @@
                 <div class="content d-flex justify-content-center align-items-center">
 
                     <!-- Login form -->
-                    <form class="form-login" method="post" action="{{ url('login') }}">
+                    <form id="form-login" class="login-form" method="post" action="{{ url('login') }}">
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
