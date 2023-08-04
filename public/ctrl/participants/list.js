@@ -40,7 +40,7 @@ var ParticipantList = function() {
                 },
                 { data: 'participant_code' },
                 { data: 'participant_name' },
-                { data: 'race_category' },
+                { data: 'race_team' },
                 { data: 'race_class' },
                 { data: 'blood' },
                 { data: 'action' },
