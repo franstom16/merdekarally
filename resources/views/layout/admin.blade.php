@@ -78,7 +78,7 @@
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="navbar-nav-link">
+                            <button type="submit" class="btn btn-link text-light">
                                 <i class="icon-switch2"></i>
                                 <span class="d-md-none ml-2">Logout</span>
                             </button>
