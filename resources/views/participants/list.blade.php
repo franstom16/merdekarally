@@ -3,7 +3,7 @@
 <a href="{{ url('participants') }}" class="breadcrumb-item active">Participant</a>
 @endsection
 @section('header_contents')
-<div class="page-title d-flex">
+<div class="page-title d-flex pb-0">
     <h4><i class="icon-vcard mr-2"></i> <span class="font-weight-semibold">Participant</h4>
     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 </div>

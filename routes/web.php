@@ -11,10 +11,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('login', 'AuthController@login');
+Route::post('login', 'AuthController@userLogin');
 
-Route::group(['prefix' => 'participants'], function() {
-    Route::post('get-data', 'ParticipantsController@getDataTable');
-    Route::get('/', 'ParticipantsController@index');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::group(['prefix' => 'participants'], function() {
+        Route::post('get-data', 'ParticipantsController@getDataTable');
+        Route::get('/', 'ParticipantsController@index');
+    });
+    Route::post('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
 
 // Route::get('/', function () {

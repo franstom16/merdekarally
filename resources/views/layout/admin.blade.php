@@ -72,10 +72,13 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="navbar-nav-link">
-                            <i class="icon-switch2"></i>
-                            <span class="d-md-none ml-2">Logout</span>
-                        </a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="navbar-nav-link">
+                                <i class="icon-switch2"></i>
+                                <span class="d-md-none ml-2">Logout</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -132,7 +135,7 @@
             <!-- Main content -->
             <div class="content-wrapper">
                 <!-- Page header -->
-                <div class="page-header page-header-light">
+                <div class="page-header">
                     <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
                         <div class="d-flex">
                             <div class="breadcrumb">
