@@ -61,6 +61,8 @@ const LoginJs = function() {
                     url: e.action,
                     data: $(e).serialize(),
                     success: function(res) {
+                        console.log(res)
+                        return false
                         if (res.success !== undefined) {
                             result.message = 'Login Success'
                             notifType = 'success'
