@@ -21,7 +21,7 @@ const LoginJs = function() {
         }
 
         // Initialize
-        var validator = $('#form-logins').validate({
+        var validator = $('#form-login').validate({
             ignore: 'input[type=hidden]',
             errorClass: 'validation-invalid-label',
             errorMessage: 'validation-invalid-label',

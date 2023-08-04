@@ -30,6 +30,7 @@
 
                     <!-- Login form -->
                     <form id="form-login" class="login-form" method="post" action="{{ url('login') }}">
+                        @csrf
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
