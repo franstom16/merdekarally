@@ -2,6 +2,12 @@
 @section('breadcrumb')
 <a href="{{ url('participants') }}" class="breadcrumb-item active">Participant</a>
 @endsection
+@section('header_contents')
+<div class="page-title d-flex">
+    <h4><i class="icon-vcard mr-2"></i> <span class="font-weight-semibold">Participant</h4>
+    <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+</div>
+@endsection
 @section('content')
 <div id="card-table" class="card table-responsive">
     <table id="participantTable" class="table table-striped">
