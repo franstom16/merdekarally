@@ -15,7 +15,7 @@ Route::get('login', 'AuthController@login');
 Route::post('login', 'AuthController@userLogin');
 
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth.web'], function() {
     Route::group(['prefix' => 'participants'], function() {
         Route::post('get-data', 'ParticipantsController@getDataTable');
         Route::get('/', 'ParticipantsController@index');
