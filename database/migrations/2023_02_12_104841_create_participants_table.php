@@ -17,13 +17,14 @@ class CreateParticipantsTable extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('team_id');
+            $table->unsignedBigInteger('class_id');
             $table->string('participant_name');
             $table->string('participant_code')->unique();
             $table->string('race_category')->nullable();
-            $table->string('race_class');
             $table->string('blood')->nullable();
             $table->timestamps();
             $table->foreign('team_id')->references('id')->on('race_teams');
+            $table->foreign('class_id')->references('id')->on('race_class');
         });
     }
 
