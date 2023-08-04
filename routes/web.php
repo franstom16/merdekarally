@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth.web'], function() {
     });
     Route::post('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
-Route::get('/', 'DashboardController@index');
+Route::get('dashboard', 'DashboardController@index');
 
 // Route::get('/', function () {
 //     return view('welcome');
