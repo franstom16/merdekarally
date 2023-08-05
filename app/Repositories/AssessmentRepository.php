@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Interfaces\AsessmentRepositoryInterface;
+use App\Interfaces\AssessmentRepositoryInterface;
 use App\Imports\AssessmentImport;
 use App\Models\Assessment;
 use App\Models\Peserta;
@@ -12,7 +12,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
 use DB;
 
-class AssessmentRepository implements AsessmentRepositoryInterface
+class AssessmentRepository implements AssessmentRepositoryInterface
 {
     use Responses;
 
