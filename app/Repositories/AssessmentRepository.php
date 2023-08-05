@@ -56,7 +56,7 @@ class AssessmentRepository implements AssessmentRepositoryInterface
                 
                 $file->move(storage_path('import'), $file->getClientOriginalName());
                 
-                $excel      = Excel::toArray(new ParticipantImport, storage_path('import') .'/'. $file->getClientOriginalName());
+                $excel      = Excel::toArray(new AssessmentImport, storage_path('import') .'/'. $file->getClientOriginalName());
                 $no         = 0;
                 $arrTeam    = $arrClass = [];          
                 foreach ($excel[0] as $ex)

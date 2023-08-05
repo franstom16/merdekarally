@@ -16,8 +16,8 @@ class AssessmentImport implements ToModel
     public function model(array $row)
     {
         return new Assessment([
-            'time'              => $row[1],
-            'participant_code'  => $row[2],
+            'time'              => $row[0],
+            'participant_code'  => $row[1],
         ]);
     }
 }
