@@ -21,34 +21,40 @@
 	<!-- /global stylesheets -->
     </head>
     <body>
+        <!-- Main navbar -->
+	    <div class="navbar navbar-expand-md navbar-dark px-0">
+            <div class="container">
+                <div class="navbar-brand wmin-200">
+                <a href="index.html" class="d-inline-block">
+					<img src="{{ asset('img/logo_light.png') }}" alt="">
+				</a>
+			</div>
+
+			<div class="d-md-none">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+					<i class="icon-tree5"></i>
+				</button>
+			</div>
+
+        </div>
+	    <!-- /main navbar -->
         <!-- Page header -->
-        <div class="page-header page-header-dark">
-            <!-- Main navbar -->
-            <div class="navbar navbar-expand-md navbar-dark border-transparent">
-                <div class="navbar-brand wmin-0 mr-5">
-                    <a href="index.html" class="d-inline-block">
-                        <img src="{{ asset('img/logo_light.png') }}" alt="">
-                    </a>
-                </div>
-                <div class="d-md-none">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-                        <i class="icon-tree5"></i>
-                    </button>
+        <div class="page-header">
+            <div class="breadcrumb-line breadcrumb-line-light px-0">
+                <div class="container header-elements-md-inline">
+                    <div class="d-flex">
+                        <div class="breadcrumb">
+                            <a href="{{ url('dashboard') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i></a>
+                            <span class="breadcrumb-item active">Dashboard</span>
+                        </div>
+                        <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                    </div>
                 </div>
             </div>
-            <!-- /main navbar -->
-            <!-- Page header content -->
-            <div class="page-header-content header-elements-md-inline">
-                <div class="page-title d-flex">
-                    <h4>Dashboard <small class="font-size-base opacity-50">Good morning, Eugene</small></h4>
-                    <a href="#" class="header-elements-toggle text-white d-md-none"><i class="icon-more"></i></a>
-                </div>
-            </div>
-            <!-- /page header content -->
         </div>
         <!-- /page header -->
         <!-- Page content -->
-        <div class="page-content">
+        <div class="page-content container pt-0">
             <!-- Main content -->
             <div class="content-wrapper">
 
