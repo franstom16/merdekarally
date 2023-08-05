@@ -12,7 +12,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
 use DB;
 
-class AsessmentRepository implements AsessmentRepositoryInterface
+class AssessmentRepository implements AsessmentRepositoryInterface
 {
     use Responses;
 
