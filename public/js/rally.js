@@ -1,6 +1,12 @@
 var main_url = "{{ env('APP_URL') }}";
 var csrf_token = $('meta[name="csrf-token"]').attr('content');
 
+var swalInit = swal.mixin({
+    buttonsStyling: false,
+    confirmButtonClass: 'btn btn-primary',
+    cancelButtonClass: 'btn btn-light'
+});
+
 var RallyScript = function() {
 
     // Setup module components
