@@ -9,7 +9,8 @@ if (! function_exists('app_menu'))
         {
             $menu = [
                 ['name' => 'Dashboard', 'link' => '/', 'icon' => 'icon-home2'],
-                ['name' => 'Participant', 'link' => 'participants', 'icon' => 'icon-vcard']
+                ['name' => 'Participant', 'link' => 'participants', 'icon' => 'icon-vcard'],
+                ['name' => 'Assessment', 'link' => 'assessments', 'icon' => 'icon-racing']
             ];
         }
         foreach ($menu as $mn)

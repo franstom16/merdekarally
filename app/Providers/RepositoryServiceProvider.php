@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Interfaces\AssessmentRepositoryInterface;
+use App\Repositories\AssessmentRepository;
 use App\Interfaces\AuthRepositoryInterface;
 use App\Repositories\AuthRepository;
 use App\Interfaces\ParticipantRepositoryInterface;
@@ -17,6 +19,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(AssessmentRepositoryInterface::class, AssessmentRepository::class);
         $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
         $this->app->bind(ParticipantRepositoryInterface::class, ParticipantRepository::class);
     }
