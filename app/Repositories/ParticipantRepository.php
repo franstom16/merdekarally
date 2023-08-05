@@ -60,11 +60,11 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                 $arrTeam    = $arrClass = [];          
                 foreach ($excel[0] as $ex)
                 {
-                    return $ex;
                     if (!empty($ex[0]))
                     {
                         if ($no > 0)
                         {
+                            return $ex;
                             $team_id = $class_id = null;
                             if (in_array($ex[3], $arrTeam))
                             {
