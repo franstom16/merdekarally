@@ -16,7 +16,7 @@ class CreateCompetitionAssessmentsTable extends Migration
         Schema::create('competition_assestments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('participant_id')->unique();
-            $table->date('start_date');
+            $table->date('race_date');
             $table->time('start_race');
             $table->time('post_1')->nullable();
             $table->time('post_2')->nullable();
