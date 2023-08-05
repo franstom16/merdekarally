@@ -71,6 +71,7 @@ class AssessmentRepository implements AssessmentRepositoryInterface
                                 if (!empty($usr->id))
                                 {
                                     $data = ['participant_id' => $usr->id, 'race_date' => date('Y-m-d'), $time => $ex[0]];
+                                    return $data;
                                     $race = Assessment::where('participant_id', $usr->id)->first();
                                     if (!empty($race->id))
                                         $qry = Assessment::where('id', $race->id)->update($data);
