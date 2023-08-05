@@ -194,33 +194,8 @@
         @yield('plugin_js')
         <!-- /core JS files -->
         <!-- Theme JS files -->
-        <script>
-            var main_url = "{{ env('APP_URL') }}";
-            var csrf_token = $('meta[name="csrf-token"]').attr('content');
-            function blockUI(blockDiv, msg) {
-                msg = msg !== undefined && msg.length > 0 ? msg : 'Please wait';
-                var dataBlock = {
-                    message: '<i class="icon-spinner4 spinner"></i><div>'+ msg +'... </div>',
-                    overlayCSS: {
-                        backgroundColor: '#fff',
-                        opacity: 0.8,
-                        cursor: 'wait'
-                    },
-                    css: {
-                        border: 0,
-                        padding: 0,
-                        backgroundColor: 'transparent'
-                    }
-                };
-
-                if (blockDiv !== undefined && blockDiv.length > 0) {
-                    $(blockDiv).block(dataBlock);
-                } else {
-                    $.blockUI(dataBlock);
-                }
-            }
-        </script>
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/rally.js') }}"></script>
         @yield('script_js')
         <!-- /theme JS files -->
     </body>
