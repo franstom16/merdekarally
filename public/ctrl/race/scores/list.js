@@ -16,7 +16,7 @@ var ParticipantList = function() {
             'serverSide': true,
             'serverMethod': 'post',
             'ajax': {
-                'url': main_url + 'assessments/get-data',
+                'url': main_url + 'race/scores/get-data',
                 'data': {
                     '_token': csrf_token
                 },
@@ -26,7 +26,7 @@ var ParticipantList = function() {
             },
             'order': [[1, 'asc']],
             'columnDefs': [{
-                targets: [0, 8],
+                targets: [0, 5],
                 className: 'text-center',
                 orderable: false,
                 searchable: false
@@ -38,13 +38,10 @@ var ParticipantList = function() {
                         return meta.row + meta.settings._iDisplayStart + 1
                     }
                 },
-                { data: 'participant' },
-                { data: 'race_date' },
-                { data: 'start_race' },
-                { data: 'post_1' },
-                { data: 'post_2' },
-                { data: 'post_3' },
-                { data: 'finish_race' },
+                { data: 'class_name' },
+                { data: 'min_time' },
+                { data: 'max_time' },
+                { data: 'score' },
                 { data: 'action' },
             ]
         });
@@ -100,7 +97,7 @@ function deleteData(ele) {
                         type: "success"
                     });
                     setTimeout(function() {
-                        window.location.href = main_url + 'participants'
+                        window.location.href = main_url + 'race/scores'
                     }, 3000)
                 },
                 error: function(e) {
