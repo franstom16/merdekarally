@@ -61,7 +61,6 @@ class AssessmentRepository implements AssessmentRepositoryInterface
                 $arrTeam    = $arrClass = [];          
                 foreach ($excel[0] as $ex)
                 {
-                    return $ex;
                     if (!empty($ex[0]))
                     {
                         if ($no > 0)
