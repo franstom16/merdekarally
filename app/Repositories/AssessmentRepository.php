@@ -70,7 +70,7 @@ class AssessmentRepository implements AssessmentRepositoryInterface
                                 if (!empty($usr->id))
                                 {
                                     $time   = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($ex[0]);
-                                    $data = ['participant_id' => $usr->id, 'race_date' => date('Y-m-d'), $race_time => $time];
+                                    $data = ['participant_id' => $usr->id, 'race_date' => date('Y-m-d'), $race_time => date('H:i:s', strtotime($time))];
                                     return $data;
                                     $race = Assessment::where('participant_id', $usr->id)->first();
                                     if (!empty($race->id))
