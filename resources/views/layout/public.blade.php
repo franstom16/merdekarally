@@ -22,11 +22,11 @@
     </head>
     <body>
         <!-- Main navbar -->
-	    <div class="navbar navbar-expand-md navbar-dark px-0">
+	    <div class="navbar navbar-expand-md navbar-dark bg-danger px-0">
             <div class="container">
                 <div class="navbar-brand wmin-200">
-                    <a href="index.html" class="d-inline-block">
-                        <img src="{{ asset('img/logo_light.png') }}" alt="">
+                    <a href="{{ url('dashboard') }}" class="d-inline-block">
+                        <img src="{{ asset('img/logo.png') }}" alt="">
                     </a>
 			    </div>
 			</div>
