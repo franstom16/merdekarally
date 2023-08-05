@@ -35,7 +35,7 @@ class ScoresController extends Controller
 
     public function import()
     {
-        return view('race.scores.import', ['page_act' => 'scores']);
+        return view('race.scores.import', ['page_act' => 'race/scores']);
     }
 
     public function importData(Request $request)
