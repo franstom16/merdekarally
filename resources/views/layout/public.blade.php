@@ -90,6 +90,7 @@
         <script src="{{ asset('plugins/loaders/blockui.min.js') }}"></script>
         <script src="{{ asset('plugins/forms/selects/select2.min.js') }}"></script>
         <script src="{{ asset('plugins/tables/datatables/datatables.min.js') }}"></script>
+        <script>var main_url = "{{ env('APP_URL') }}";</script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/datatable.js') }}"></script>
         <script src="{{ asset('ctrl/dashboard.js') }}"></script>
