@@ -7,5 +7,5 @@ use Illuminate\Validation\Rule;
 
 class vAssessmentTeam extends Model
 {
-    protected $table = 'v_assestments_teams ';
+    protected $table = 'v_assesments_teams';
 }
