@@ -20,7 +20,7 @@ class ScoresRepository implements ScoresRepositoryInterface
     {
         try
         {
-            $data = Score::join('race_class as b', 'b.id', 'race_scores.class_id')->select('a.*', 'b.class_name');
+            $data = Score::join('race_class as b', 'b.id', 'race_scores.class_id')->select('race_scores.*', 'b.class_name');
             return DataTables::of($data)
                     ->addColumn('action', function($row) use ($filter) {
                         return '<form onSubmit="return deleteData(this)" method="post" action="'. url('race/scores/' . $row->id) .'">' .
