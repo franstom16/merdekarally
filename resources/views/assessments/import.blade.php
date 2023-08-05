@@ -54,6 +54,7 @@
 <script src="{{ asset('plugins/uploaders/fileinput/plugins/purify.min.js') }}"></script>
 <script src="{{ asset('plugins/uploaders/fileinput/plugins/sortable.min.js') }}"></script>
 <script src="{{ asset('plugins/uploaders/fileinput/fileinput.min.js') }}"></script>
+<script src="{{ asset('plugins/forms/selects/select2.min.js') }}"></script>
 <script src="{{ asset('plugins/forms/validation/validate.min.js') }}"></script>
 <script src="{{ asset('plugins/forms/validation/additional_methods.min.js') }}"></script>
 @endsection
