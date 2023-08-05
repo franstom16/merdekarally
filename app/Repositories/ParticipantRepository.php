@@ -90,6 +90,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                             }
                             elseif (!empty($ex[5]))
                             {
+                                return $ex[5];
                                 $class = RaceClass::where('class_name', $ex[5])->first();
                                 if (!empty($class->id))
                                 {
