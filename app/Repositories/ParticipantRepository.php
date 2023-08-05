@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Interfaces\ParticipantRepositoryInterface;
 use App\Imports\ParticipantImport;
-use App\Models\Participant as Participants;
+use App\Models\Participant;
 use App\Models\RaceTeam;
 use App\Models\RaceClass;
 use App\Traits\Responses;
@@ -43,7 +43,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
     {
         try
         {
-            return vParticipant::get();
+            return Participant::get();
             $validator  = $this->validation($data->file(), ['file_import' => 'required|max:2048|mimes:xls,xlsx']);
             if (!empty($validator))
             {
