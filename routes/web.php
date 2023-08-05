@@ -11,9 +11,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('dashboard', 'DashboardController@index');
 Route::get('login', 'AuthController@login');
 Route::post('login', 'AuthController@userLogin');
 Route::group(['middleware' => 'auth.web'], function() {
+    Route::group(['prefix' => 'assessments'], function() {
+        Route::get('create', 'AssesstmentController@create');
+        Route::post('get-data', 'AssesstmentController@getDataTable');
+        Route::get('import', 'AssesstmentController@import');
+        Route::post('import', 'AssesstmentController@importData');
+        Route::get('/', 'AssesstmentController@index');
+    });
     Route::group(['prefix' => 'participants'], function() {
         Route::get('create', 'ParticipantsController@create');
         Route::post('get-data', 'ParticipantsController@getDataTable');
@@ -23,7 +31,6 @@ Route::group(['middleware' => 'auth.web'], function() {
     });
     Route::post('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
-Route::get('dashboard', 'DashboardController@index');
 
 // Route::get('/', function () {
 //     return view('welcome');
