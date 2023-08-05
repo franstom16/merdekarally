@@ -9,10 +9,10 @@
 </div>
 <div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">
     <div class="btn-group mt-4">
-        <a hre="{{ url('assessments/create') }}" class="btn bg-indigo-400"><i class="icon-plus2 mr-2"></i> Create</a>
+        <a hre="{{ url('race/scores/create') }}" class="btn bg-indigo-400"><i class="icon-plus2 mr-2"></i> Create</a>
         <button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
         <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(163px, 36px, 0px);">
-            <a href="{{ url('assessments/import') }}" class="dropdown-item"><i class="icon-import"></i> Import</a>
+            <a href="{{ url('race/scores/import') }}" class="dropdown-item"><i class="icon-import"></i> Import</a>
         </div>
     </div>
 </div>
@@ -22,15 +22,14 @@
     <table id="assessmentTable" class="table table-striped">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Participant</th>
-                <th>Date</th>
-                <th>Start</th>
-                <th>Post 1</th>
-                <th>Post 2</th>
-                <th>Post 3</th>
-                <th>Finish</th>
-                <th><i class="icon-gear"></i></th>
+                <th rowspan="2">No</th>
+                <th colspan="2">Total Time <small>(minutes)<small></th>
+                <th rowspan="2">Score</th>
+                <th rowspan="2"><i class="icon-gear"></i></th>
+            </tr>
+            <tr>
+                <th>Min.</th>
+                <th>Max.</th>
             </tr>
         </thead>
     </table>
@@ -43,5 +42,5 @@
 @endsection
 @section('script_js')
 <script src="{{ asset('js/datatable.js') }}"></script>
-<script src="{{ asset('ctrl/assessments/list.js') }}"></script>
+<script src="{{ asset('ctrl/race/scores/list.js') }}"></script>
 @endsection

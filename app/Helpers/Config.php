@@ -9,8 +9,15 @@ if (! function_exists('app_menu'))
         {
             $menu = [
                 ['name' => 'Dashboard', 'link' => 'dashboard', 'icon' => 'icon-home2'],
-                ['name' => 'Participant', 'link' => 'participants', 'icon' => 'icon-vcard'],
-                ['name' => 'Assessment', 'link' => 'assessments', 'icon' => 'icon-racing']
+                ['name' => 'Participant', 'link' => 'participants', 'icon' => 'icon-people'],
+                ['name' => 'Assessment', 'link' => 'assessments', 'icon' => 'icon-finish'],
+                ['name' => 'Race', 'icon' => 'icon-racing',
+                 'child' => [
+                     ['name' => 'Class', 'link' => 'race/class', 'icon' => 'icon-make-group'],
+                     ['name' => 'Team', 'link' => 'race/team', 'icon' => 'icon-vcard'],
+                     ['name' => 'Score', 'link' => 'race/score', 'icon' => 'icon-target2'],
+                 ]
+                ],
             ];
         }
         foreach ($menu as $mn)

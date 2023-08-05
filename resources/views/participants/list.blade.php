@@ -4,7 +4,7 @@
 @endsection
 @section('header_contents')
 <div class="page-title d-flex pb-0">
-    <h4><i class="icon-vcard mr-2"></i> <span class="font-weight-semibold">Participant</span></h4>
+    <h4><i class="icon-people mr-2"></i> <span class="font-weight-semibold">Participant</span></h4>
     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 </div>
 <div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">

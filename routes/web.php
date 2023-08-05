@@ -29,25 +29,14 @@ Route::group(['middleware' => 'auth.web'], function() {
         Route::post('import', 'ParticipantsController@importData');
         Route::get('/', 'ParticipantsController@index');
     });
+    Route::group(['prefix' => 'race'], function() {
+        Route::group(['prefix' => 'score'], function() {
+            Route::get('create', 'Race\ScoresController@create');
+            Route::post('get-data', 'Race\ScoresController@getDataTable');
+            Route::get('import', 'Race\ScoresController@import');
+            Route::post('import', 'Race\ScoresController@importData');
+            Route::get('/', 'ParticipantsController@index');
+        });
+    });
     Route::post('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/download-apk', function () {
-//     return Storage::download('public/rallyPeserta.apk');
-// });
-// Route::post('/limit',[TimelimitController::class,'store'])->name('store.timelimit');
-// Route::get('/show',[TimelimitController::class,'show'])->name('show');
-// Route::get('/register',[ParticipantController::class,'createStepOne'])->name('participants.create.step.one');
-// Route::post('participant/create-step-one', [ParticipantController::class,'postCreateStepOne'])->name('participants.create.step.one.post');
- 
-// Route::get('participants/create-step-two', [ParticipantController::class,'createStepTwo'])->name('participants.create.step.two');
-// Route::post('participants/create-step-two', [ParticipantController::class,'postCreateStepTwo'])->name('participants.create.step.two.post');
-  
-// Route::get('participants/create-step-three', [ParticipantController::class,'createStepThree'])->name('participants.create.step.three');
-// Route::post('participants/create-step-three', [ParticipantController::class,'postCreateStepThree'])->name('participants.create.step.three.post');
-// Route::get('participants/create-step-final', [ParticipantController::class,'createStepFinal'])->name('participants.create.step.final');
-// Route::post('participants/create-step-final', [ParticipantController::class,'postCreateStepFinal'])->name('participants.create.step.final.post');

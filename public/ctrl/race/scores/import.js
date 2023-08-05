@@ -70,7 +70,7 @@ var FileUpload = function() {
 
         $('.file-input-ajax').fileinput({
             browseLabel: 'Browse',
-            uploadUrl: main_url + "assessments/import", // server upload action
+            uploadUrl: main_url + "race/scores/import", // server upload action
             uploadAsync: true,
             maxFileCount: 1,
             initialPreview: [],
@@ -98,20 +98,6 @@ var FileUpload = function() {
             previewZoomButtonIcons: previewZoomButtonIcons
         });
     }
-
-    // Select2 for length menu styling
-    var _componentSelect2 = function() {
-        if (!$().select2) {
-            console.warn('Warning - select2.min.js is not loaded.');
-            return;
-        }
-
-        // Initialize
-        $('.form-select2').select2({
-            allowClear: true,
-            placeholder: '-- Please Select --'
-        });
-    };
 
     var _componentValidation = function() {
         if (!$().validate) {
@@ -188,7 +174,7 @@ var FileUpload = function() {
                         $('.spinner-border').hide()
                         $('#btn-submit').attr('disabled', false)
                         setTimeout(function() {
-                            window.location.href = main_url + 'assessments'
+                            window.location.href = main_url + 'race/scores'
                         }, 200)
                     },
                     error: function(e) {
@@ -215,7 +201,6 @@ var FileUpload = function() {
     return {
         init: function() {
             _componentFileUpload();
-            _componentSelect2()
             _componentValidation()
         }
     }
