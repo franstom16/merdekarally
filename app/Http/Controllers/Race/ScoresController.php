@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Race;
 
 use App\Interfaces\Race\ScoresRepositoryInterface;
 use App\Traits\Responses;

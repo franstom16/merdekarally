@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Race;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
 
-class RaceTeam extends Model
+class RaceClass extends Model
 {
-    protected $table = 'race_teams';
+    protected $table = 'race_class';
     protected $guarded = ['id', 'created_at', 'updated_at'];
 }

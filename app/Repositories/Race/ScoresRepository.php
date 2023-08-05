@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Race;
 
 use App\Interfaces\Race\ScoresRepositoryInterface;
 use App\Imports\Race\ScoreImport;
 use App\Models\Peserta;
+use App\Models\Race\RaceClass;
 use App\Models\Race\Score;
 use App\Traits\Responses;
 use Maatwebsite\Excel\Facades\Excel;
@@ -51,11 +52,10 @@ class ScoresRepository implements ScoresRepositoryInterface
                 $fail       = $success = 0;
                 $dtlSucc    = $dtlFail =  [];
                 $file       = $data->file('file_import');
-                $race_time  = $data->race_time;
                 
                 $file->move(storage_path('import'), $file->getClientOriginalName());
                 
-                $excel      = Excel::toArray(new AssessmentImport, storage_path('import') .'/'. $file->getClientOriginalName());
+                $excel      = Excel::toArray(new ScoreImport, storage_path('import') .'/'. $file->getClientOriginalName());
                 $no         = 0;     
                 foreach ($excel[0] as $ex)
                 {
@@ -65,16 +65,15 @@ class ScoresRepository implements ScoresRepositoryInterface
                         {
                             if (!empty($ex[0]))
                             {
-                                $usr = Peserta::where('participant_code', $ex[1])->first();
-                                if (!empty($usr->id))
+                                $race = RaceClass::where('class_name', $ex[0])->first();
+                                if (!empty($race->id))
                                 {
-                                    $time = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($ex[0]);
-                                    $data = ['participant_id' => $usr->id, 'race_date' => date('Y-m-d'), $race_time => $time];
-                                    $race = Assessment::where('participant_id', $usr->id)->first();
+                                    $data   = ['class_id' => $race->id, 'min_time' => $ex[1], 'max_time' => $ex[2], 'score' => $ex[3]];
+                                    $score  = Score::where('class_id', $race->id)->first();
                                     if (!empty($race->id))
-                                        $qry = Assessment::where('id', $race->id)->update($data);
+                                        $qry = Score::where('id', $score->id)->update($data);
                                     else
-                                        $qry = Assessment::create($data);
+                                        $qry = Score::create($data);
 
                                     if ($qry)
                                         $success++;

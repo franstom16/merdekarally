@@ -5,10 +5,10 @@ namespace App\Repositories;
 use App\Interfaces\ParticipantRepositoryInterface;
 use App\Imports\ParticipantImport;
 use App\Models\Peserta;
-use App\Models\RaceTeam;
-use App\Models\RaceClass;
-use App\Traits\Responses;
+use App\Models\Race\RaceClass;
+use App\Models\Race\Team;
 use App\Models\vParticipant;
+use App\Traits\Responses;
 use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
 use DB;
@@ -72,14 +72,14 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                             }
                             elseif (!empty($ex[3]))
                             {
-                                $team = RaceTeam::where('team_name', $ex[3])->first();
+                                $team = Team::where('team_name', $ex[3])->first();
                                 if (!empty($team->id))
                                 {
                                     $team_id = $team->id;
                                 }
                                 else
                                 {
-                                    $insTeam    = RaceTeam::create(['team_name' => $ex[3]]);
+                                    $insTeam    = Team::create(['team_name' => $ex[3]]);
                                     $team_id    = $insTeam->id;
                                 }
                                 $arrTeam[$ex[3]] = $team_id;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Race;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
