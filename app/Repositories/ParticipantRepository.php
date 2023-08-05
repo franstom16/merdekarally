@@ -64,13 +64,12 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                     {
                         if ($no > 0)
                         {
-                            return $ex;
                             $team_id = $class_id = null;
                             if (in_array($ex[3], $arrTeam))
                             {
                                 $team_id = $arrTeam[$ex[3]];
                             }
-                            else
+                            elseif (!empty($ex[3]))
                             {
                                 $team = RaceTeam::where('team_name', $ex[3])->first();
                                 if (!empty($team->id))
@@ -89,7 +88,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                             {
                                 $class_id = $arrClass[$ex[5]];
                             }
-                            else
+                            elseif (!empty($ex[5]))
                             {
                                 $class = RaceClass::where('class_name', $ex[5])->first();
                                 if (!empty($team->id))
@@ -128,15 +127,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
 
                 unlink(storage_path('import') .'/'. $file->getClientOriginalName());
 
-                $errors = [];
-                if(!empty($dtlFail))
-                {
-                    if ($success > 0)
-                        $dtlFail = array_merge([['Total Success : '. $success]], $dtlFail);
-                    $errors = ['error_msg' => $dtlFail, 'error_code' => 422];
-                }
-
-                return $this->app_partials($success, $fail, $dtlSucc, $errors);
+                return ['success' => $success, 'fail' => $fail];
             }
         }
         catch (\Exception $e)
