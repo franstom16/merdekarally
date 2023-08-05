@@ -24,7 +24,7 @@ class ScoresController extends Controller
      */
     public function index()
     {
-        return view('race.scores.list', ['page_act' => 'scores']);
+        return view('race.scores.list', ['page_act' => 'race/scores']);
     }
 
     public function getDataTable(Request $request)

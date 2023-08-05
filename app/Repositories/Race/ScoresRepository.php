@@ -4,8 +4,8 @@ namespace App\Repositories;
 
 use App\Interfaces\Race\ScoresRepositoryInterface;
 use App\Imports\Race\ScoreImport;
-use App\Models\Score;
 use App\Models\Peserta;
+use App\Models\Race\Score;
 use App\Traits\Responses;
 use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
