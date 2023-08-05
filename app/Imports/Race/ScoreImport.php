@@ -19,7 +19,7 @@ class ScoreImport implements ToModel
             'class_name'    => $row[0],
             'min_time'      => $row[1],
             'max_time'      => $row[2],
-            'score'         => $row[3],
+            'score'         => $row[4],
         ]);
     }
 }
