@@ -191,6 +191,7 @@
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('plugins/loaders/blockui.min.js') }}"></script>
         <script src="{{ asset('plugins/ui/ripple.min.js') }}"></script>
+        <script src="{{ asset('plugins/notifications/sweet_alert.min.js') }}"></script>
         @yield('plugin_js')
         <!-- /core JS files -->
         <!-- Theme JS files -->
