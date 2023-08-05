@@ -42,7 +42,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
     {
         try
         {
-            $validator  = $this->validation($data, ['file_import' => 'required|max:2048|mimes:xls,xlsx']);
+            $validator  = $this->validation($data->file(), ['file_import' => 'required|max:2048|mimes:xls,xlsx']);
             if (!empty($validator))
             {
                 return $validator;
@@ -51,7 +51,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
             {            
                 $fail       = $success = 0;
                 $dtlSucc    = $dtlFail =  [];
-                $file       = $request->file('file_import');
+                $file       = $data->file('file_import');
                 
                 $file->move(storage_path('import'), $file->getClientOriginalName());
                 
