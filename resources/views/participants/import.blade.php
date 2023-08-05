@@ -1,6 +1,6 @@
-@extends('layouts.admiin')
+@extends('layouts.admin')
 @section('content')
-<form class="form-validate" method="post" action="{{ url('asset/products/price/import') }}" enctype="multipart/form-data">
+<form class="form-validate" method="post" action="{{ url('participants/import') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="card card-cpm">
         <div class="card-header header-elements-inline">
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-cancel btn-light" data-method="asset/products/price">Cancel</button>
+            <button type="button" class="btn btn-cancel btn-light" data-method="participants">Cancel</button>
         </div>
     </div>
 </form>
