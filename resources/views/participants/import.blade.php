@@ -5,13 +5,8 @@
 @section('header_contents')
 <div class="page-title d-flex pb-0">
     <h4>
-        <i class="icon-vcard mr-2"></i> 
-        <span class="font-weight-semibold">
-            <a href="{{ url('participants') }}" class="btn btn-link text-light mr-1">
-                <i class="icon-arrow-left52"></i>
-            </a>
-            Import Participant
-        </span>
+        <a href="{{ url('participants') }}" class="btn btn-link text-dark px-0 mr-1"><i class="icon-arrow-left52"></i></a>
+        <span class="font-weight-semibold">Import Participant</span>
     </h4>
     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 </div>
