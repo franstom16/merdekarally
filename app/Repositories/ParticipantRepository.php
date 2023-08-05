@@ -91,7 +91,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                             elseif (!empty($ex[5]))
                             {
                                 $class = RaceClass::where('class_name', $ex[5])->first();
-                                if (!empty($team->id))
+                                if (!empty($class->id))
                                 {
                                     $class_id = $class->id;
                                 }
