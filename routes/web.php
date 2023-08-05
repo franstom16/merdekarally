@@ -16,11 +16,11 @@ Route::get('login', 'AuthController@login');
 Route::post('login', 'AuthController@userLogin');
 Route::group(['middleware' => 'auth.web'], function() {
     Route::group(['prefix' => 'assessments'], function() {
-        Route::get('create', 'AssesstmentController@create');
-        Route::post('get-data', 'AssesstmentController@getDataTable');
-        Route::get('import', 'AssesstmentController@import');
-        Route::post('import', 'AssesstmentController@importData');
-        Route::get('/', 'AssesstmentController@index');
+        Route::get('create', 'AssessmentController@create');
+        Route::post('get-data', 'AssessmentController@getDataTable');
+        Route::get('import', 'AssessmentController@import');
+        Route::post('import', 'AssessmentController@importData');
+        Route::get('/', 'AssessmentController@index');
     });
     Route::group(['prefix' => 'participants'], function() {
         Route::get('create', 'ParticipantsController@create');
