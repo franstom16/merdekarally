@@ -20,7 +20,7 @@
 @section('content')
 <div id="card-table" class="card table-responsive">
     <table id="assessmentTable" class="table table-striped">
-        <thead>
+        <thead class="text-center">
             <tr>
                 <th rowspan="2">No</th>
                 <th colspan="2">Total Time <small>(minutes)<small></th>
