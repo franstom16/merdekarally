@@ -43,6 +43,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
     {
         try
         {
+            return Participant::get();
             $validator  = $this->validation($data->file(), ['file_import' => 'required|max:2048|mimes:xls,xlsx']);
             if (!empty($validator))
             {
