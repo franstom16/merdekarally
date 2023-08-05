@@ -8,9 +8,9 @@
     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 </div>
 <div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">
-    <div class="btn-group">
-        <a hre="{{ url('participants/create') }}" class="btn btn-primary"><i class="icon-plus2 mr-2"></i> Create</a>
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+    <div class="btn-group mt-4">
+        <a hre="{{ url('participants/create') }}" class="btn bg-indigo-400"><i class="icon-plus2 mr-2"></i> Create</a>
+        <button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
         <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(163px, 36px, 0px);">
             <a href="{{ url('participants/import') }}" class="dropdown-item"><i class="icon-menu7"></i> Import</a>
         </div>
