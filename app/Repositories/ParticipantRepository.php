@@ -42,7 +42,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
     {
         try
         {
-            $validator  = $this->validation($loginData, User::rulesLogin());
+            $validator  = $this->validation($data, ['file_import' => 'required|max:2048|mimes:xls,xlsx']);
             if (!empty($validator))
             {
                 return $validator;
