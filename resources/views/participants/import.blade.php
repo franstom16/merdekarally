@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layout.admin')
 @section('content')
 <form class="form-validate" method="post" action="{{ url('participants/import') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
