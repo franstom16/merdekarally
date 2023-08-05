@@ -43,7 +43,6 @@ class ParticipantRepository implements ParticipantRepositoryInterface
     {
         try
         {
-            return Peserta::get();
             $validator  = $this->validation($data->file(), ['file_import' => 'required|max:2048|mimes:xls,xlsx']);
             if (!empty($validator))
             {
@@ -113,7 +112,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                                         'team_id'           => $team_id,
                                         'class_id'          => $class_id
                                     ];
-                            if ($qry = Participant::create($data))
+                            if ($qry = Peserta::create($data))
                             {
                                 array_push($dtlSucc, ['id' => $qry->id]);
                                 $success++;
