@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('breadcrumb')
-<span class="breadcrumb-item active">Participant</span>
+<span class="breadcrumb-item active">Assessment</span>
 @endsection
 @section('header_contents')
 <div class="page-title d-flex pb-0">
