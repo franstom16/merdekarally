@@ -32,6 +32,11 @@ class AssessmentController extends Controller
         return $this->assessRepo->getDataTable(['_token' => $request->_token]);
     }
 
+    public function getTeams(Request $request)
+    {
+        return $this->assessRepo->getTeams(['_token' => $request->_token]);
+    }
+
     public function import()
     {
         return view('assessments.import', ['page_act' => 'assessments']);

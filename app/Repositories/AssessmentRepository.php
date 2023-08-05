@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Interfaces\AssessmentRepositoryInterface;
 use App\Imports\AssessmentImport;
 use App\Models\Assessment;
+use App\Models\Assessment\vAssessmentTeam;
 use App\Models\Peserta;
 use App\Models\vAssessment;
 use App\Traits\Responses;
@@ -31,6 +32,19 @@ class AssessmentRepository implements AssessmentRepositoryInterface
                                 '</form>';
                     })
                     ->toJson();
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
+
+    public function getTeams($filter)
+    {
+        try
+        {
+            $data = vAssessmentTeam::select('*');
+            return DataTables::of($data)->toJson();
         }
         catch (\Exception $e)
         {

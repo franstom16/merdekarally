@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth.web'], function() {
         Route::post('get-data', 'AssessmentController@getDataTable');
         Route::get('import', 'AssessmentController@import');
         Route::post('import', 'AssessmentController@importData');
+        Route::post('teams', 'AssessmentController@getTeams');
         Route::get('/', 'AssessmentController@index');
     });
     Route::group(['prefix' => 'participants'], function() {
