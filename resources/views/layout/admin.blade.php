@@ -195,6 +195,7 @@
         @yield('plugin_js')
         <!-- /core JS files -->
         <!-- Theme JS files -->
+        <script>var main_url = "{{ env('APP_URL') }}";</script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/rally.js') }}"></script>
         @yield('script_js')
