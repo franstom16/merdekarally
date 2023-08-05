@@ -69,9 +69,8 @@ class AssessmentRepository implements AssessmentRepositoryInterface
                                 $usr = Peserta::where('participant_code', $ex[1])->first();
                                 if (!empty($usr->id))
                                 {
-                                    $time   = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($ex[0]);
-                                    $data = ['participant_id' => $usr->id, 'race_date' => date('Y-m-d'), $race_time => strtotime($time)];
-                                    return $data;
+                                    $time = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($ex[0]);
+                                    $data = ['participant_id' => $usr->id, 'race_date' => date('Y-m-d'), $race_time => $time];
                                     $race = Assessment::where('participant_id', $usr->id)->first();
                                     if (!empty($race->id))
                                         $qry = Assessment::where('id', $race->id)->update($data);
