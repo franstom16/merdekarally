@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Race;
 
+use App\Http\Controllers\Controller;
 use App\Interfaces\Race\ScoresRepositoryInterface;
 use App\Traits\Responses;
 use Illuminate\Http\Request;
