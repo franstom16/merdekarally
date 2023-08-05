@@ -5,6 +5,8 @@ namespace App\Repositories;
 use App\Interfaces\ParticipantRepositoryInterface;
 use App\Imports\ParticipantImport;
 use App\Models\vParticipant;
+use App\Models\RaceTeam;
+use App\Models\RaceClass;
 use App\Traits\Responses;
 use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
@@ -53,48 +55,69 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                 
                 $file->move(storage_path('import'), $file->getClientOriginalName());
                 
-                $excel  = Excel::toArray(new ParticipantImport, storage_path('import') .'/'. $file->getClientOriginalName());
-                $no     = 0;            
+                $excel      = Excel::toArray(new ParticipantImport, storage_path('import') .'/'. $file->getClientOriginalName());
+                $no         = 0;
+                $arrTeam    = $arrClass = [];          
                 foreach ($excel[0] as $ex)
                 {
                     if (!empty($ex[0]))
                     {
                         if ($no > 0)
                         {
-                            $err = [];                    
-                            if (!is_numeric($ex[1]))
-                                $err[] = $ex[0] . ' format date invalid';
-                            if (!is_numeric($ex[2]))
-                                $err[] = $ex[0] . ' price must be numeric'; 
-                            
-                            if (empty($err))
+                            $team_id = $class_id = null;
+                            if (in_array($ex[3], $arrTeam))
                             {
-                                $prd = Product::where([['product_code', $ex[0]], ['is_active', 'Yes']])->first();
-                                if (!empty($prd->product_id))
-                                {
-                                    $date   = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($ex[1]);
-                                    $data   = [
-                                                'product_id'    => $prd->product_id, 
-                                                'price_date'    => \Carbon\Carbon::instance($date), 
-                                                'price_value'   => $ex[2],
-                                                'created_by'    => $usrtyp.':'.$usrid.':'.$usrnm,
-                                                'created_host'  => $ip
-                                            ];
-                                    if ($qry = Price::create($data))
-                                    {
-                                        array_push($dtlSucc, ['id' => $qry->price_id]);
-                                        $success++;
-                                    }
-                                }
-                                else
-                                {
-                                    array_push($dtlFail, [$ex[0] . ' data not found']);
-                                    $fail++;
-                                }
+                                $team_id = $arrTeam[$ex[3]];
                             }
                             else
                             {
-                                array_push($dtlFail, $err);
+                                $team = RaceTeam::where('team_name', $ex[3])->first();
+                                if (!empty($team->id))
+                                {
+                                    $team_id = $team->id;
+                                }
+                                else
+                                {
+                                    $insTeam    = RaceTeam::create(['team_name' => $ex[3]]);
+                                    $team_id    = $insTeam->id;
+                                }
+                                $arrTeam[$ex[3]] = $team_id;
+                            }
+                            
+                            if (in_array($ex[5], $arrClass))
+                            {
+                                $class_id = $arrClass[$ex[5]];
+                            }
+                            else
+                            {
+                                $class = RaceClass::where('class_name', $ex[5])->first();
+                                if (!empty($team->id))
+                                {
+                                    $class_id = $class->id;
+                                }
+                                else
+                                {
+                                    $insClass   = RaceClass::create(['class_name' => $ex[5]]);
+                                    $class_id   = $insClass->id;
+                                }
+                                $arrClass[$ex[5]] = $class_id;
+                            }
+
+                            $data   = [
+                                        'participant_code'  => $ex[1], 
+                                        'participant_name'  => $ex[2],
+                                        'race_category'     => $ex[4],
+                                        'blood'             => $ex[6],
+                                        'team_id'           => $team_id,
+                                        'class_id'          => $class_id
+                                    ];
+                            if ($qry = Participant::create($data))
+                            {
+                                array_push($dtlSucc, ['id' => $qry->id]);
+                                $success++;
+                            }
+                            else
+                            {
                                 $fail++;
                             }
                         }

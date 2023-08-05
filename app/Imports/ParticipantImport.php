@@ -16,9 +16,12 @@ class ParticipantImport implements ToModel
     public function model(array $row)
     {
         return new Price([
-            'product_id'    => $row[0],
-            'price_date'    => $row[1],
-            'price_value'   => $row[2]
+            'participant_code'  => $row[1],
+            'participant_name'  => $row[2],
+            'team_name'         => $row[3],
+            'race_category'     => $row[4],
+            'class_name'        => $row[5],
+            'blood'             => $row[6]
         ]);
     }
 }
