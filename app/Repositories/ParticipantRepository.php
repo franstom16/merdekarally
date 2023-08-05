@@ -97,6 +97,7 @@ class ParticipantRepository implements ParticipantRepositoryInterface
                                 }
                                 else
                                 {
+                                    return ['class_name' => $ex[5]];
                                     $insClass   = RaceClass::create(['class_name' => $ex[5]]);
                                     $class_id   = $insClass->id;
                                 }
