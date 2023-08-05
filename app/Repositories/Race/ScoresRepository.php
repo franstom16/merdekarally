@@ -68,7 +68,7 @@ class ScoresRepository implements ScoresRepositoryInterface
                                 $race = RaceClass::where('class_name', $ex[0])->first();
                                 if (!empty($race->id))
                                 {
-                                    $score  = is_numeric($ex[4]) ? $ex[4] : null;
+                                    $score  = is_numeric($ex[3]) ? $ex[3] : null;
                                     $data   = ['class_id' => $race->id, 'min_time' => $ex[1], 'max_time' => $ex[2], 'score' => $score];
                                     $qry    = Score::where([['class_id', $race->id], ['min_time', $ex[1]], ['max_time', $ex[2]]])->first();
                                     if (!empty($qry->id))

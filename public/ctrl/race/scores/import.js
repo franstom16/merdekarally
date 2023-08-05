@@ -151,50 +151,49 @@ var FileUpload = function() {
                 }
             },
             submitHandler:function(e) {
-                // $('.spinner-border').show()
-                // $('#btn-submit').attr('disabled', true)
-                // var result = []
-                // var notifType = 'warning'
-                // $.ajax({
-                //     type: 'POST',
-                //     url: e.action,
-                //     data: $(e).serialize(),
-                //     success: function(res) {
-                //         if (res.success !== undefined) {
-                //             result.message = 'Import Success'
-                //             notifType = 'success'
-                //         } else {
-                //             result.success = false
-                //             result.message = 'Import Failed'
-                //         }
-                //         new Noty({
-                //             text: result.message,
-                //             type: notifType
-                //         }).show();
-                //         $('.spinner-border').hide()
-                //         $('#btn-submit').attr('disabled', false)
-                //         setTimeout(function() {
-                //             window.location.href = main_url + 'race/scores'
-                //         }, 200)
-                //     },
-                //     error: function(e) {
-                //         if (e.responseJSON.errors !== undefined && e.responseJSON.errors.error_msg) {
-                //             result.message = e.responseJSON.errors.error_msg
-                //         } else {
-                //             result.message = 'Login Failed'
-                //         }
-                //         $(result.message).each(function(i, m) {
-                //             new Noty({
-                //                 text: m,
-                //                 type: notifType
-                //             }).show();
-                //         })
-                //         $('.spinner-border').hide()
-                //         $('#btn-submit').attr('disabled', false)
-                //     }
-                // })
-                // return false
-                return e.submit()
+                $('.spinner-border').show()
+                $('#btn-submit').attr('disabled', true)
+                var result = []
+                var notifType = 'warning'
+                $.ajax({
+                    type: 'POST',
+                    url: e.action,
+                    data: $(e).serialize(),
+                    success: function(res) {
+                        if (res.success !== undefined) {
+                            result.message = 'Import Success'
+                            notifType = 'success'
+                        } else {
+                            result.success = false
+                            result.message = 'Import Failed'
+                        }
+                        new Noty({
+                            text: result.message,
+                            type: notifType
+                        }).show();
+                        $('.spinner-border').hide()
+                        $('#btn-submit').attr('disabled', false)
+                        setTimeout(function() {
+                            window.location.href = main_url + 'race/scores'
+                        }, 200)
+                    },
+                    error: function(e) {
+                        if (e.responseJSON.errors !== undefined && e.responseJSON.errors.error_msg) {
+                            result.message = e.responseJSON.errors.error_msg
+                        } else {
+                            result.message = 'Login Failed'
+                        }
+                        $(result.message).each(function(i, m) {
+                            new Noty({
+                                text: m,
+                                type: notifType
+                            }).show();
+                        })
+                        $('.spinner-border').hide()
+                        $('#btn-submit').attr('disabled', false)
+                    }
+                })
+                return false
             }
         });
     };
