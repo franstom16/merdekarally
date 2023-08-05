@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Interfaces\AsessmentRepositoryInterface;
+use App\Interfaces\AssessmentRepositoryInterface;
 use App\Traits\Responses;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class AssessmentController extends Controller
 
     public $assessRepo;
 
-    public function __construct(AsessmentRepositoryInterface $assessRepo)
+    public function __construct(AssessmentRepositoryInterface $assessRepo)
     {
         $this->assessRepo = $assessRepo;
     }
