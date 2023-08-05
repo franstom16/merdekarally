@@ -10,24 +10,15 @@
     </h4>
     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 </div>
-<div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">
-    <div class="btn-group mt-4">
-        <a hre="{{ url('participants/create') }}" class="btn bg-indigo-400"><i class="icon-plus2 mr-2"></i> Create</a>
-        <button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
-        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(163px, 36px, 0px);">
-            <a href="{{ url('participants/import') }}" class="dropdown-item"><i class="icon-menu7"></i> Import</a>
-        </div>
-    </div>
-</div>
 @endsection
 @section('content')
 <form class="form-validate" method="post" action="{{ url('participants/import') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
-    <div class="card card-cpm">
-        <div class="card-header header-elements-inline">
-            <h5 class="card-title font-weight-semibold"> Create</h5>
+    <div class="card">
+        <div class="card-header header-elements-inline border-bottom">
+            <h5 class="card-title font-weight-semibold"> Import</h5>
         </div>
-        <div class="card-body">
+        <div class="card-body pt-3">
             <div class="form-group row">
                 <div class="col-lg-12">
                     <h6 class="card-title font-weight-semibold"> Content Preview</h6>
