@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Race;
 
+use App\Http\Controllers\Controller;
 use App\Interfaces\Race\ScoresRepositoryInterface;
 use App\Imports\Race\ScoreImport;
 use App\Models\Peserta;
