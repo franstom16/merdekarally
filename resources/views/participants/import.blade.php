@@ -1,4 +1,30 @@
 @extends('layout.admin')
+@section('breadcrumb')
+<span class="breadcrumb-item active">Participant</span>
+@endsection
+@section('header_contents')
+<div class="page-title d-flex pb-0">
+    <h4>
+        <i class="icon-vcard mr-2"></i> 
+        <span class="font-weight-semibold">
+            <a href="{{ url('participants') }}" class="btn btn-link text-light mr-1">
+                <i class="icon-arrow-left52"></i>
+            </a>
+            Import Participant
+        </span>
+    </h4>
+    <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+</div>
+<div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">
+    <div class="btn-group mt-4">
+        <a hre="{{ url('participants/create') }}" class="btn bg-indigo-400"><i class="icon-plus2 mr-2"></i> Create</a>
+        <button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
+        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(163px, 36px, 0px);">
+            <a href="{{ url('participants/import') }}" class="dropdown-item"><i class="icon-menu7"></i> Import</a>
+        </div>
+    </div>
+</div>
+@endsection
 @section('content')
 <form class="form-validate" method="post" action="{{ url('participants/import') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
