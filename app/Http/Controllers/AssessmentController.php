@@ -24,7 +24,7 @@ class AssessmentController extends Controller
      */
     public function index()
     {
-        return view('assessment.list', ['page_act' => 'assessments']);
+        return view('assessments.list', ['page_act' => 'assessments']);
     }
 
     public function getDataTable(Request $request)
