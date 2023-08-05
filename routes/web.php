@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth.web'], function() {
         Route::get('/', 'ParticipantsController@index');
     });
     Route::group(['prefix' => 'race'], function() {
-        Route::group(['prefix' => 'score'], function() {
+        Route::group(['prefix' => 'scores'], function() {
             Route::get('create', 'Race\ScoresController@create');
             Route::post('get-data', 'Race\ScoresController@getDataTable');
             Route::get('import', 'Race\ScoresController@import');

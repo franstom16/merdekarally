@@ -14,8 +14,8 @@ if (! function_exists('app_menu'))
                 ['name' => 'Race', 'icon' => 'icon-racing',
                  'child' => [
                      ['name' => 'Class', 'link' => 'race/class', 'icon' => 'icon-make-group'],
-                     ['name' => 'Team', 'link' => 'race/team', 'icon' => 'icon-vcard'],
-                     ['name' => 'Score', 'link' => 'race/score', 'icon' => 'icon-target2'],
+                     ['name' => 'Team', 'link' => 'race/teams', 'icon' => 'icon-vcard'],
+                     ['name' => 'Score', 'link' => 'race/scores', 'icon' => 'icon-target2'],
                  ]
                 ],
             ];
