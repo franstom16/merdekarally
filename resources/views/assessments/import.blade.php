@@ -57,6 +57,7 @@
 <script src="{{ asset('plugins/forms/selects/select2.min.js') }}"></script>
 <script src="{{ asset('plugins/forms/validation/validate.min.js') }}"></script>
 <script src="{{ asset('plugins/forms/validation/additional_methods.min.js') }}"></script>
+<script src="{{ asset('plugins/notifications/noty.min.js') }}"></script>
 @endsection
 @section('script_js')
 <script src="{{ asset('ctrl/assessments/import.js') }}"></script>
