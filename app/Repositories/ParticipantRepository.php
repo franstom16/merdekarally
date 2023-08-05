@@ -4,10 +4,11 @@ namespace App\Repositories;
 
 use App\Interfaces\ParticipantRepositoryInterface;
 use App\Imports\ParticipantImport;
-use App\Models\vParticipant;
+use App\Models\Participant;
 use App\Models\RaceTeam;
 use App\Models\RaceClass;
 use App\Traits\Responses;
+use App\Models\vParticipant;
 use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
 use DB;
