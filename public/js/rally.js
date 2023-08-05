@@ -11,8 +11,6 @@ var RallyScript = function() {
     // Setup module components
     var _componentJs = function(){
         $(".btn-cancel").click(function(){
-            alert(main_url)
-            alert($(this).data("method"))
             var meth = $(this).data("method");
             swalInit.fire({
                 title: "Are you sure?",
