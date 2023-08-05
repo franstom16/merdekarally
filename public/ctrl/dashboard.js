@@ -66,5 +66,5 @@ var DashboardJs = function() {
 }()
 
 document.addEventListener('DOMContentLoaded', function() {
-    DocumentJs.init()
+    DashboardJs.init()
 })
