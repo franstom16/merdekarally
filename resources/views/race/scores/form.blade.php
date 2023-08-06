@@ -26,7 +26,7 @@
         <div class="card-body pt-3">
             <div class="form-group">
                 <label>Class *</label>
-                <select class="form-control" id="class_id" name="class_id" required>
+                <select class="form-control form-select2" id="class_id" name="class_id" required>
                     <option value=""></option>
                     @foreach ($raceClass as $rc)
                         @php $slct = isset($score->class_id) && $score->class_id == $rc->id ? ' selected' : '' @endphp
