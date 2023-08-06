@@ -52,7 +52,7 @@
             <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
         </div>
     </div>
-</div>
+</form>
 @endsection
 @section('plugin_js')
 <script src="{{ asset('plugins/forms/selects/select2.min.js') }}"></script>
