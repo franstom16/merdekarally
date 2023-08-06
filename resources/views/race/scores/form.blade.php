@@ -14,7 +14,7 @@
 @endsection
 @section('content')
 @php $id = !empty($score->id) ? '/' . $score->id : '' @endphp
-<form class="form-validate" method="post" action="{{ url('race/scores' . $id) }}">
+<form id="form-score" class="form-validate" method="post" action="{{ url('race/scores' . $id) }}">
     {{ csrf_field() }}
     @if (!empty($id))
         @method('PUT')
