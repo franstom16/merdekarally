@@ -35,8 +35,8 @@ Route::group(['middleware' => 'auth.web'], function() {
             Route::post('get-data', 'Race\ScoresController@getDataTable');
             Route::get('import', 'Race\ScoresController@import');
             Route::post('import', 'Race\ScoresController@importData');
-            Route::resource('/', 'Race\ScoresController');
         });
+        Route::resource('scores', 'Race\ScoresController');
     });
     Route::post('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
