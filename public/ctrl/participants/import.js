@@ -181,7 +181,7 @@ var FileUpload = function() {
                         if (e.responseJSON.errors !== undefined && e.responseJSON.errors.error_msg) {
                             result.message = e.responseJSON.errors.error_msg
                         } else {
-                            result.message = 'Login Failed'
+                            result.message = 'Import Failed'
                         }
                         $(result.message).each(function(i, m) {
                             new Noty({
