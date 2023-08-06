@@ -24,6 +24,7 @@
         <thead class="text-center">
             <tr>
                 <th rowspan="2">No</th>
+                <th rowspan="2">Class</th>
                 <th colspan="2">Total Time <small>(minutes)<small></th>
                 <th rowspan="2">Score</th>
                 <th rowspan="2"><i class="icon-gear"></i></th>

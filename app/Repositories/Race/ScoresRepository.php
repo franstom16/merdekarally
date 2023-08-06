@@ -4,7 +4,6 @@ namespace App\Repositories\Race;
 
 use App\Interfaces\Race\ScoresRepositoryInterface;
 use App\Imports\Race\ScoreImport;
-use App\Models\Peserta;
 use App\Models\Race\RaceClass;
 use App\Models\Race\Score;
 use App\Traits\Responses;
@@ -15,6 +14,43 @@ use DB;
 class ScoresRepository implements ScoresRepositoryInterface
 {
     use Responses;
+
+    public function createData($data)
+    {
+        try
+        {
+            $validator = $this->validation($data->input(), Score::rules());
+            if (!empty($validator))
+            {
+                return $validator;
+            }
+            else
+            {
+                return Score::create([
+                    'class_id'  => $data->class_id,
+                    'min_time'  => $data->min_time,
+                    'max_time'  => $data->max_time,
+                    'score'     => $data->score
+                ]);
+            }
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
+
+    public function deleteData($id)
+    {
+        try
+        {
+            return Score::destroy($id);
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
 
     public function getDataTable($filter)
     {
@@ -31,6 +67,18 @@ class ScoresRepository implements ScoresRepositoryInterface
                                 '</form>';
                     })
                     ->toJson();
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
+
+    public function getRaceClass()
+    {
+        try
+        {
+            return RaceClass::all();
         }
         catch (\Exception $e)
         {
@@ -90,6 +138,31 @@ class ScoresRepository implements ScoresRepositoryInterface
                 unlink(storage_path('import') .'/'. $file->getClientOriginalName());
 
                 return ['success' => $success, 'fail' => $fail];
+            }
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
+
+    public function updateData($data, $id)
+    {
+        try
+        {
+            $validator = $this->validation($data->input(), Score::rules());
+            if (!empty($validator))
+            {
+                return $validator;
+            }
+            else
+            {
+                return Score::where('id', $id)->update([
+                    'class_id'  => $data->class_id,
+                    'min_time'  => $data->min_time,
+                    'max_time'  => $data->max_time,
+                    'score'     => $data->score
+                ]);
             }
         }
         catch (\Exception $e)
