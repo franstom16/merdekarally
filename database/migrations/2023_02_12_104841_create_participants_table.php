@@ -16,15 +16,9 @@ class CreateParticipantsTable extends Migration
         Schema::dropIfExists('participants');
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('team_id')->nullable();
-            $table->unsignedBigInteger('class_id');
             $table->string('participant_name');
-            $table->string('participant_code')->unique();
-            $table->string('race_category')->nullable();
             $table->string('blood')->nullable();
             $table->timestamps();
-            $table->foreign('team_id')->references('id')->on('race_teams');
-            $table->foreign('class_id')->references('id')->on('race_class');
         });
     }
 
