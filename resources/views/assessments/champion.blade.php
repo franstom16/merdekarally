@@ -1,12 +1,12 @@
 @for($i = 0; $i < 3; $i++)
     @if (!empty($team[$i]))
-        @php $medalTeam = $i > 0 ? $i == 3 ? 'third' : 'second' : 'first' @endphp 
+        @php $medalTeam = $i > 0 ? $i == 2 ? 'third' : 'second' : 'first' @endphp 
     @else
         @php $medalTeam = '' @endphp
     @endif
 
     @if (!empty($individual[$i]))
-        @php $medalIndividual = $i > 0 ? $i == 3 ? 'third' : 'second' : 'first' @endphp 
+        @php $medalIndividual = $i > 0 ? $i == 2 ? 'third' : 'second' : 'first' @endphp 
     @else
         @php $medalIndividual = '' @endphp
     @endif
