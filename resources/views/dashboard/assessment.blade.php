@@ -5,7 +5,7 @@
             <table id="assessment{{ $rc->class_code }}Table" class="table table-striped">
                 <thead style="background-image: url({{ asset('img/panel_bg.png') }}); background-size: contain;">
                     <tr class="text-center text-uppercase">
-                        <th colspan="6">{{ $rc->class_name }}</th>
+                        <th colspan="6">Champion {{ $rc->class_name }}</th>
                     </tr>
                     <tr class="text-center">
                         <th colspan="3">Team</th>
