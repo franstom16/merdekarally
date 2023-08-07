@@ -20,7 +20,7 @@
         <td class="border-right">{{ $team[$i]->race_results ?? '' }}</td>
         <td>
             @if (!empty($medalIndividual))
-                <i class="icon-medal-{{ $icon }}"></i>
+                <i class="icon-medal-{{ $medalIndividual }}"></i>
             @endif
         </td>
         <td>{{ $individual[$i]->participant_name ?? '' }}</td>
