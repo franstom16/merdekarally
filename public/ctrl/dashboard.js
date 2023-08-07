@@ -2,7 +2,7 @@ var DashboardJs = function() {
     var _componentChampion = function(raceClass) {
         $.ajax({
             type: 'GET',
-            url: main_url + 'assessment/champion/' + raceClass,
+            url: main_url + 'assessments/champion/' + raceClass,
             success: function(res) {
                 $('#assessment'+ raceClass +'Table tbody').html(res)
             }
