@@ -2,10 +2,10 @@
     @foreach ($raceClass as $rc)
     <div class="col-lg-6">
         <div class="card table-responsive">
-            <table id="assessment{{ $classCode }}Table" class="table table-striped">
+            <table id="assessment{{ $rc->class_code }}Table" class="table table-striped">
                 <thead>
                     <tr>
-                        <th colspan="6">Team</th>
+                        <th colspan="6">{{ $rc->class_name }}</th>
                     </tr>
                     <tr>
                         <th colspan="3">Team</th>
