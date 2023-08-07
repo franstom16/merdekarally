@@ -5,7 +5,9 @@ namespace App\Repositories;
 use App\Interfaces\AssessmentRepositoryInterface;
 use App\Imports\AssessmentImport;
 use App\Models\Assessment;
+use App\Models\Assessment\vAssessmentIndividualScore;
 use App\Models\Assessment\vAssessmentTeam;
+use App\Models\Assessment\vAssessmentTeamScore;
 use App\Models\Peserta;
 use App\Models\vAssessment;
 use App\Traits\Responses;
@@ -16,6 +18,30 @@ use DB;
 class AssessmentRepository implements AssessmentRepositoryInterface
 {
     use Responses;
+    
+    public function getChampionIndividualByRace($race)
+    {
+        try
+        {
+            return vAssessmentIndividualScore::where('class_code', $race)->limit(3)->get();
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
+    
+    public function getChampionTeamByRace($race)
+    {
+        try
+        {
+            return vAssessmentTeamScore::where('class_code', $race)->limit(3)->get();
+        }
+        catch (\Exception $e)
+        {
+            return (object) ['errors' => ['error_code' => 500, 'error_msg' => $e->getMessage()]];
+        }
+    }
 
     public function getDataTable($filter)
     {

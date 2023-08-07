@@ -14,7 +14,7 @@
                     <tr>
                         <th>Rank</th>
                         <th>Team</th>
-                        <th>Score</th>
+                        <th class="border-right">Score</th>
                         <th>Rank</th>
                         <th>Participant</th>
                         <th>Score</th>

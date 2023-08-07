@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('merdeka/result', 'DashboardController@index');
+Route::get('assessments/champion/{race}', 'AssessmentController@champion');
 Route::get('login', 'AuthController@login');
 Route::post('login', 'AuthController@userLogin');
+Route::get('merdeka/result', 'DashboardController@index');
 Route::group(['middleware' => 'auth.web'], function() {
     Route::group(['prefix' => 'assessments'], function() {
         Route::get('create', 'AssessmentController@create');

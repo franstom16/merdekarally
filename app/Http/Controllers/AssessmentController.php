@@ -27,6 +27,11 @@ class AssessmentController extends Controller
         return view('assessments.list', ['page_act' => 'assessments']);
     }
 
+    public function champion($race)
+    {
+        return view('assessments.champion', ['team' => $this->assessRepo->getChampionTeamByRace($race), 'individual' => $this->assessRepo->getChampionIndividualByRace($race)]);
+    }
+
     public function getDataTable(Request $request)
     {
         return $this->assessRepo->getDataTable(['_token' => $request->_token]);

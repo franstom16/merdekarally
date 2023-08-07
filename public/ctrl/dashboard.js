@@ -1,4 +1,14 @@
 var DashboardJs = function() {
+    var _componentChampion = function(raceClass) {
+        $.ajax({
+            type: 'GET',
+            url: main_url + 'assessment/champion/' + raceClass,
+            success: function(res) {
+                $('#assessment'+ raceClass +'Table tbody').html(res)
+            }
+        })
+    }
+
     var _componentDatatable = function() {
         if (!$().DataTable) {
             console.warn('Warning - datatables.min.js is not loaded.');
@@ -57,10 +67,30 @@ var DashboardJs = function() {
         });
     };
 
+    var _componentStart = async function() {
+        await new Promise ((resolve, reject) => {
+            try {
+                _componentChampion('CCY')
+                resolve('berhasil')
+            } catch (e) {
+                reject('gagal')
+            }
+        })
+        await new Promise ((resolve, reject) => {
+            try {
+                _componentChampion('DLP')
+                resolve('berhasil')
+            } catch (e) {
+                reject('gagal')
+            }
+        })
+    }
+
     return {
         init: function() {
             _componentDatatable()
             _componentSelect2()
+            _componentStart()
         }
     }
 }()
