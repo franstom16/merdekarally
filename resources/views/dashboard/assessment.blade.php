@@ -4,10 +4,10 @@
         <div class="card table-responsive">
             <table id="assessment{{ $rc->class_code }}Table" class="table table-striped">
                 <thead>
-                    <tr>
+                    <tr class="text-center text-uppercase">
                         <th colspan="6">{{ $rc->class_name }}</th>
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <th colspan="3">Team</th>
                         <th colspan="3">Individu</th>
                     </tr>

@@ -15,6 +15,6 @@ class DashboardController extends Controller
     public function index()
     {
         $raceClass = RaceClass::get();
-        return view('dashboard.content', ['raceClass' => $class]);
+        return view('dashboard.content', ['raceClass' => $raceClass]);
     }
 }
