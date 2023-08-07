@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('dashboard', 'DashboardController@index');
+Route::get('merdeka/result', 'DashboardController@index');
 Route::get('login', 'AuthController@login');
 Route::post('login', 'AuthController@userLogin');
 Route::group(['middleware' => 'auth.web'], function() {
