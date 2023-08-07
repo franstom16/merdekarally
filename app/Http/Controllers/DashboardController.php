@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Race\RaceClass;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,6 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.content');
+        $raceClass = RaceClass::get();
+        return view('dashboard.content', ['raceClass' => $class]);
     }
 }
