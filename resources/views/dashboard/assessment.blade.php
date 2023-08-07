@@ -23,4 +23,5 @@
             </table>
         </div>
     </div>
+    @endforeach
 </div>
