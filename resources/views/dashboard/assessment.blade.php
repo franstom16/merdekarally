@@ -3,7 +3,7 @@
     <div class="col-lg-6">
         <div class="card table-responsive">
             <table id="assessment{{ $rc->class_code }}Table" class="table table-striped">
-                <thead>
+                <thead style="background-image: url({{ asset('img/panel_bg.png') }}); background-size: contain;">
                     <tr class="text-center text-uppercase">
                         <th colspan="6">{{ $rc->class_name }}</th>
                     </tr>
