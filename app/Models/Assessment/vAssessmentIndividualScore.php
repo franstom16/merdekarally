@@ -7,5 +7,5 @@ use Illuminate\Validation\Rule;
 
 class vAssessmentIndividualScore extends Model
 {
-    protected $table = 'v_assesments_individuals_score';
+    protected $table = 'v_assessments_individuals_score';
 }

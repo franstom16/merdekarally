@@ -29,7 +29,6 @@ class AssessmentController extends Controller
 
     public function champion($race)
     {
-        dd(['team' => $this->assessRepo->getChampionTeamByRace($race), 'individual' => $this->assessRepo->getChampionIndividualByRace($race)]);
         return view('assessments.champion', ['team' => $this->assessRepo->getChampionTeamByRace($race), 'individual' => $this->assessRepo->getChampionIndividualByRace($race)]);
     }
 
