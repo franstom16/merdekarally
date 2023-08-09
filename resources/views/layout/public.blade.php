@@ -28,7 +28,7 @@
     <body class="navbar-md-md-top">
         <div class="fixed-top">
             <!-- Page header -->
-            <div class="page-header page-header-dark">
+            <div class="page-header page-header-dark mb-0">
                 <!-- Main navbar -->
                 <div class="navbar navbar-expand-md border-transparent">
                     <div class="d-md-none">
@@ -48,7 +48,7 @@
 
             </div>
             <!-- /page header -->
-            <div class="navbar navbar-expand-md navbar-dark border-top-0">
+            <div class="navbar navbar-expand-md navbar-dark bg-danger border-top-0">
                 <div class="d-md-none w-100">
                     <button type="button" class="navbar-toggler d-flex align-items-center w-100" data-toggle="collapse" data-target="#navbar-navigation">
                         <i class="icon-menu-open mr-2"></i>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <!-- Page content -->
-        <div class="page-content container pt-0">
+        <div class="page-content container mt-5">
             <!-- Main content -->
             <div class="content-wrapper">
 
