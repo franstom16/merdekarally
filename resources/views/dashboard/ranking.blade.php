@@ -72,50 +72,50 @@
                             <td class="text-center py-1">{{ $kv }}</td>
                             <td class="text-center py-1">{{ $vr->race_results }}</td>
                             <td class="text-center py-1">{{ $vr->start_race ?? 'DNS' }}</td>
-                            <td class="text-center py-1">
+                            <td class="text-center py-1">{{ $vr->post_1 }}</td>
+                            <td class="text-center py-1">{{ $vr->time_post1 }}</td>
+                            <td class="text-center py-1">                                
                                 @if (empty($vr->post_1) && empty($vr->start_race))
                                     DNS
                                 @elseif (empty($vr->post_1))
                                     DSQ
                                 @else
-                                    {{ $vr->post_1 }}
+                                    {{ $vr->score_post1 }}
                                 @endif
                             </td>
-                            <td class="text-center py-1">{{ $vr->time_post1 }}</td>
-                            <td class="text-center py-1">{{ $vr->score_post1 }}</td>
+                            <td class="text-center py-1">{{ $vr->post_2 }}</td>
+                            <td class="text-center py-1">{{ $vr->time_post2 }}</td>
                             <td class="text-center py-1">                                
                                 @if (empty($vr->post_2) && empty($vr->post_1) && empty($vr->start_race))
                                     DNS
                                 @elseif (empty($vr->post_2))
                                     DSQ
                                 @else
-                                    {{ $vr->post_2 }}
+                                    {{ $vr->score_post2 }}
                                 @endif
                             </td>
-                            <td class="text-center py-1">{{ $vr->time_post2 }}</td>
-                            <td class="text-center py-1">{{ $vr->score_post2 }}</td>
+                            <td class="text-center py-1">{{ $vr->post_3 }}</td>
+                            <td class="text-center py-1">{{ $vr->time_post3 }}</td>
                             <td class="text-center py-1">                                
                                 @if (empty($vr->post_3) && empty($vr->post_2) && empty($vr->post_1) && empty($vr->start_race))
                                     DNS
                                 @elseif (empty($vr->post_3))
                                     DSQ
                                 @else
-                                    {{ $vr->post_3 }}
+                                    {{ $vr->score_post3 }}
                                 @endif
                             </td>
-                            <td class="text-center py-1">{{ $vr->time_post3 }}</td>
-                            <td class="text-center py-1">{{ $vr->score_post3 }}</td>
+                            <td class="text-center py-1">{{ $vr->finish_race }}</td>
+                            <td class="text-center py-1">{{ $vr->time_finish }}</td>
                             <td class="text-center py-1">                                
                                 @if (empty($vr->finish_race) && empty($vr->post_3) && empty($vr->post_2) && empty($vr->post_1) && empty($vr->start_race))
                                     DNS
                                 @elseif (empty($vr->finish_race))
                                     DNF
                                 @else
-                                    {{ $vr->finish_race }}
+                                    {{ $vr->score_finish }}
                                 @endif
                             </td>
-                            <td class="text-center py-1">{{ $vr->time_finish }}</td>
-                            <td class="text-center py-1">{{ $vr->score_finish }}</td>
                             <td class="text-center py-1">{{ $vr->time_all }}</td>
                             <td class="text-center py-1">{{ $vr->score_all_time }}</td>
                         </tr>
