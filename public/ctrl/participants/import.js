@@ -174,7 +174,7 @@ var FileUpload = function() {
                         $('.spinner-border').hide()
                         $('#btn-submit').attr('disabled', false)
                         setTimeout(function() {
-                            window.location.href = main_url + 'participants'
+                            window.location.href = main_url + 'simpatisan'
                         }, 200)
                     },
                     error: function(e) {

@@ -16,21 +16,20 @@
         <link href="{{ asset('css/dist/components.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/dist/colors.min.css') }}" rel="stylesheet" type="text/css">
         <style>
-            .sidebar-user-material .sidebar-user-material-body{background:url("{{ asset('img/user_bg3.jpg') }}") center center no-repeat;background-size:cover}
+            .page-header { 
+                background-image: url("{{ asset('img/banner.jpg') }}");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                height: 100px;
+            }
         </style>
 	<!-- /global stylesheets -->
     </head>
     <body>
         <!-- Page header -->
-	    <div class="page-header page-header-dark" style="background-image: url({{ asset('img/sponsor.png') }}); background-size: contain;">
+	    <div class="page-header page-header-dark">
             <!-- Main navbar -->
-            <div class="navbar navbar-expand-md navbar-dark border-transparent">
-                <div class="navbar-brand wmin-0 mr-5">
-                    <a href="{{ url('dashboard') }}" class="d-inline-block">
-                        <img src="{{ asset('logo_light.png') }}" alt="">
-                    </a>
-                </div>
-
+            <div class="navbar navbar-expand-md border-transparent">
                 <div class="d-md-none">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
                         <i class="icon-tree5"></i>
