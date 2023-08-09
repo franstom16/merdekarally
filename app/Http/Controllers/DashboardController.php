@@ -17,7 +17,7 @@ class DashboardController extends Controller
     public function index()
     {
         $raceClass = RaceClass::get();
-        return view('dashboard.content', ['raceClass' => $raceClass]);
+        return view('dashboard.content', ['raceClass' => $raceClass, 'mn_active' => 'dashboard']);
     }
 
     public function ranking()
@@ -31,6 +31,6 @@ class DashboardController extends Controller
                 'Team'      => vAssessmentTeamScore::where('class_code', $rc->class_code)->get()
             ];
         }
-        return view('dashboard.ranking', ['rank' => $rank]);
+        return view('dashboard.ranking', ['rank' => $rank, 'mn_active' => 'merdeka/result']);
     }
 }

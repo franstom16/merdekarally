@@ -48,6 +48,30 @@
 
             </div>
             <!-- /page header -->
+            <div class="navbar navbar-expand-md navbar-dark border-top-0">
+                <div class="d-md-none w-100">
+                    <button type="button" class="navbar-toggler d-flex align-items-center w-100" data-toggle="collapse" data-target="#navbar-navigation">
+                        <i class="icon-menu-open mr-2"></i>
+                        Main navigation
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-navigation">
+                    <ul class="navbar-nav navbar-nav-highlight">
+                        <li class="nav-item">
+                            <a href="{{ url('dashboard') }}" class="navbar-nav-link{{ $mn_active == 'dashboard' ? ' active' : '' }}">
+                                <i class="icon-home4 mr-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('merdeka/result') }}" class="navbar-nav-link{{ $mn_active == 'merdeka/result' ? ' active' : '' }}">
+                                <i class="icon-trophy2 mr-2"></i>
+                                Champion
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <!-- Page content -->
         <div class="page-content container pt-0">
