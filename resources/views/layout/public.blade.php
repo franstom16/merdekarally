@@ -26,7 +26,7 @@
             <!-- Main navbar -->
             <div class="navbar navbar-expand-md navbar-dark border-transparent">
                 <div class="navbar-brand wmin-0 mr-5">
-                    <a href="{{ url('dashboard'') }}" class="d-inline-block">
+                    <a href="{{ url('dashboard') }}" class="d-inline-block">
                         <img src="{{ asset('logo_light.png') }}" alt="">
                     </a>
                 </div>
