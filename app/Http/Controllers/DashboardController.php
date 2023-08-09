@@ -31,7 +31,6 @@ class DashboardController extends Controller
                 'Team'      => vAssessmentTeamScore::where('class_code', $rc->class_code)->get()
             ];
         }
-        dd($rank);
         return view('dashboard.ranking', ['rank' => $rank]);
     }
 }
