@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('assessments/champion/{race}', 'AssessmentController@champion');
 Route::get('login', 'AuthController@login');
 Route::post('login', 'AuthController@userLogin');
-Route::get('merdeka/result', 'DashboardController@index');
+Route::get('merdeka/result', 'DashboardController@ranking');
+Route::get('dashboard', 'DashboardController@index');
 Route::group(['middleware' => 'auth.web'], function() {
     Route::group(['prefix' => 'assessments'], function() {
         Route::get('create', 'AssessmentController@create');

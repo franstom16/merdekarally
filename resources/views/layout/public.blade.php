@@ -21,37 +21,31 @@
 	<!-- /global stylesheets -->
     </head>
     <body>
-        <!-- Main navbar -->
-	    <div class="navbar navbar-expand-md navbar-dark bg-danger px-0">
-            <div class="container">
-                <div class="navbar-brand wmin-200">
-                    <a href="{{ url('dashboard') }}" class="d-inline-block">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
-                    </a>
-			    </div>
-			</div>
-
-			<div class="d-md-none">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-					<i class="icon-tree5"></i>
-				</button>
-			</div>
-
-        </div>
-	    <!-- /main navbar -->
         <!-- Page header -->
-        <div class="page-header">
-            <div class="breadcrumb-line breadcrumb-line-light px-0">
-                <div class="container header-elements-md-inline">
-                    <div class="d-flex">
-                        <div class="breadcrumb">
-                            <a href="{{ url('dashboard') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i></a>
-                            <span class="breadcrumb-item active">Dashboard</span>
-                        </div>
-                        <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-                    </div>
+	    <div class="page-header page-header-dark">
+            <!-- Main navbar -->
+            <div class="navbar navbar-expand-md navbar-dark border-transparent">
+                <div class="navbar-brand wmin-0 mr-5">
+                    <a href="{{ url('dashboard'') }}" class="d-inline-block">
+                        <img src="{{ asset('logo_light.png') }}" alt="">
+                    </a>
+                </div>
+
+                <div class="d-md-none">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                        <i class="icon-tree5"></i>
+                    </button>
                 </div>
             </div>
+            <!-- /main navbar -->
+
+
+            <!-- Page header content -->
+            <div class="page-header-content header-elements-md-inline">
+                
+            </div>
+            <!-- /page header content -->
+
         </div>
         <!-- /page header -->
         <!-- Page content -->

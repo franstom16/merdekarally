@@ -17,4 +17,9 @@ class DashboardController extends Controller
         $raceClass = RaceClass::get();
         return view('dashboard.content', ['raceClass' => $raceClass]);
     }
+
+    public function ranking()
+    {
+
+    }
 }
