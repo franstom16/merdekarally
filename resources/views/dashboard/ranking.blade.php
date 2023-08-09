@@ -62,7 +62,7 @@
                 <tr>
                     <td>{{ $k }}</td>
                 </tr>
-                @foreach ($rkv as $k => $v)
+                @endforeach
             @endforeach
         </tbody>
     </table>
