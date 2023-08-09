@@ -32,6 +32,6 @@ class DashboardController extends Controller
             ];
         }
         dd($rank);
-        return view('dashboard.ranking');
+        return view('dashboard.ranking', ['rank' => $rank]);
     }
 }
