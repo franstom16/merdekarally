@@ -20,6 +20,6 @@ class DashboardController extends Controller
 
     public function ranking()
     {
-
+        return view('dashboard.ranking');
     }
 }
