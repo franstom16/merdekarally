@@ -59,7 +59,7 @@
         <tbody>
             @foreach ($rank as $rk => $rkv)
                 @foreach ($rkv as $k => $v)
-                <tr class="text-uppercase">
+                <tr class="text-center text-uppercase">
                     <td class="text-nowrap border-right-0" colspan="2">{{ $rk }}</td>
                     <td class="text-nowrap border-left-0 border-right-0">Kategori {{ $k }}</td>
                     <td class="border-left-0" colspan="16"></td>
