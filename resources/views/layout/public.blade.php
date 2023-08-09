@@ -25,28 +25,30 @@
         </style>
 	<!-- /global stylesheets -->
     </head>
-    <body>
-        <!-- Page header -->
-	    <div class="page-header page-header-dark">
-            <!-- Main navbar -->
-            <div class="navbar navbar-expand-md border-transparent">
-                <div class="d-md-none">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-                        <i class="icon-tree5"></i>
-                    </button>
+    <body class="navbar-md-md-top">
+        <div class="fixed-top">
+            <!-- Page header -->
+            <div class="page-header page-header-dark">
+                <!-- Main navbar -->
+                <div class="navbar navbar-expand-md border-transparent">
+                    <div class="d-md-none">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                            <i class="icon-tree5"></i>
+                        </button>
+                    </div>
                 </div>
+                <!-- /main navbar -->
+
+
+                <!-- Page header content -->
+                <div class="page-header-content header-elements-md-inline">
+                    
+                </div>
+                <!-- /page header content -->
+
             </div>
-            <!-- /main navbar -->
-
-
-            <!-- Page header content -->
-            <div class="page-header-content header-elements-md-inline">
-                
-            </div>
-            <!-- /page header content -->
-
+            <!-- /page header -->
         </div>
-        <!-- /page header -->
         <!-- Page content -->
         <div class="page-content container pt-0">
             <!-- Main content -->
