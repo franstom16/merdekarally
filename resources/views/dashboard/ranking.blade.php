@@ -58,12 +58,19 @@
         </thead>
         <tbody>
             @foreach ($rank as $rk => $rkv)
-                @foreach ($rkv as $k => $v)
-                <tr class="text-center text-uppercase">
-                    <td class="text-nowrap border-right-0" colspan="2">{{ $rk }}</td>
-                    <td class="text-nowrap border-left-0 border-right-0">Kategori {{ $k }}</td>
-                    <td class="border-left-0" colspan="16"></td>
-                </tr>
+                @foreach ($rkv as $kv => $v_rank)
+                    <tr class="text-center text-uppercase">
+                        <td class="text-nowrap border-right-0" colspan="2">{{ $rk }}</td>
+                        <td class="text-nowrap border-left-0 border-right-0">Kategori {{ $kv }}</td>
+                        <td class="border-left-0" colspan="16"></td>
+                    </tr>
+                    @php $n = 1 @endphp
+                    @foreach ($v_rank as $vr)
+                        <tr>
+                            <td>{{ $n++ }}</td>
+                            <td>{{ $kv == 'Individu' ? $vr->participant_name : $vr->team_name }}</td>
+                        </tr>
+                    @endforeach
                 @endforeach
             @endforeach
         </tbody>
