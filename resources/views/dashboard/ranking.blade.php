@@ -57,10 +57,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($rank as $rk => $rv)
+            @foreach ($rank as $rk => $rkv)
+                @foreach ($rkv as $k => $v)
                 <tr>
-                    <td>{{ $rk }}</td>
+                    <td>{{ $k }}</td>
                 </tr>
+                @foreach ($rkv as $k => $v)
             @endforeach
         </tbody>
     </table>
