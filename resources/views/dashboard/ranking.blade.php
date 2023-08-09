@@ -60,16 +60,16 @@
             @foreach ($rank as $rk => $rkv)
                 @foreach ($rkv as $kv => $v_rank)
                     <tr class="text-center text-uppercase">
-                        <td class="text-nowrap border-right-0" colspan="2">{{ $rk }}</td>
-                        <td class="text-nowrap border-left-0 border-right-0">Kategori {{ $kv }}</td>
-                        <td class="border-left-0" colspan="16"></td>
+                        <td class="text-nowrap border-right-0 py-1" colspan="2">{{ $rk }}</td>
+                        <td class="text-nowrap border-left-0 border-right-0 py-1">Kategori {{ $kv }}</td>
+                        <td class="border-left-0 py-1" colspan="16"></td>
                     </tr>
                     @php $n = 1 @endphp
                     @foreach ($v_rank as $vr)
                         <tr>
-                            <td class="text-center">{{ $n++ }}</td>
-                            <td>{{ $kv == 'Individu' ? $vr->participant_name : $vr->team_name }}</td>
-                            <td class="text-center">{{ $kv }}</td>
+                            <td class="text-center p-1">{{ $n++ }}</td>
+                            <td class="py-1">{{ $kv == 'Individu' ? $vr->participant_name : $vr->team_name }}</td>
+                            <td class="text-center py-1">{{ $kv }}</td>
                         </tr>
                     @endforeach
                 @endforeach
