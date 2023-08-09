@@ -2,7 +2,7 @@
 @section('content')
 <div class="card table-responsive">
     <table class="table table-striped">
-        <thead>
+        <thead class="text-center">
             <tr>
                 <th rowspan="4" colspan="3">OFFICIAL RESULT</th>
                 <th>TOTAL</th>
