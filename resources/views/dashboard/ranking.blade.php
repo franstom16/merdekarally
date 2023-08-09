@@ -4,7 +4,7 @@
     <table class="table table-striped table-bordered">
         <thead class="text-center">
             <tr>
-                <th rowspan="4" colspan="3">OFFICIAL RESULT</th>
+                <th class="p-0" rowspan="4" colspan="3" style="background-image: url('{{ asset('img/logo.png') }}');background-size:cover">OFFICIAL RESULT</th>
                 <th class="py-1">TOTAL</th>
                 <th class="py-1">START</th>
                 <th class="py-1" colspan="3">POS 1</th>
@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 @foreach (range('A','P') as $v)
-                <th class="py-1">{{ $v }}</th>
+                <th class="py-1{{ $v != 'A' ? ' bg-grey-300' : '' }}">{{ $v }}</th>
                 @endforeach
             </tr>
             <tr>
@@ -71,17 +71,49 @@
                             <td class="py-1">{{ $kv == 'Individu' ? $vr->participant_name : $vr->team_name }}</td>
                             <td class="text-center py-1">{{ $kv }}</td>
                             <td class="text-center py-1">{{ $vr->race_results }}</td>
-                            <td class="text-center py-1"></td>
-                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">{{ $vr->start_race ?? 'DNS' }}</td>
+                            <td class="text-center py-1">
+                                @if (empty($vr->post_1) && empty($vr->start_race))
+                                    DNS
+                                @elseif (empty($vr->post_1))
+                                    DSQ
+                                @else
+                                    {{ $vr->post_1 }}
+                                @endif
+                            </td>
                             <td class="text-center py-1">{{ $vr->time_post1 }}</td>
                             <td class="text-center py-1">{{ $vr->score_post1 }}</td>
-                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">                                
+                                @if (empty($vr->post_2) && empty($vr->post_1) && empty($vr->start_race))
+                                    DNS
+                                @elseif (empty($vr->post_2))
+                                    DSQ
+                                @else
+                                    {{ $vr->post_2 }}
+                                @endif
+                            </td>
                             <td class="text-center py-1">{{ $vr->time_post2 }}</td>
                             <td class="text-center py-1">{{ $vr->score_post2 }}</td>
-                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">                                
+                                @if (empty($vr->post_3) && empty($vr->post_2) && empty($vr->post_1) && empty($vr->start_race))
+                                    DNS
+                                @elseif (empty($vr->post_3))
+                                    DSQ
+                                @else
+                                    {{ $vr->post_3 }}
+                                @endif
+                            </td>
                             <td class="text-center py-1">{{ $vr->time_post3 }}</td>
                             <td class="text-center py-1">{{ $vr->score_post3 }}</td>
-                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">                                
+                                @if (empty($vr->finish_race) && empty($vr->post_3) && empty($vr->post_2) && empty($vr->post_1) && empty($vr->start_race))
+                                    DNS
+                                @elseif (empty($vr->finish_race))
+                                    DNF
+                                @else
+                                    {{ $vr->finish_race }}
+                                @endif
+                            </td>
                             <td class="text-center py-1">{{ $vr->time_finish }}</td>
                             <td class="text-center py-1">{{ $vr->score_finish }}</td>
                             <td class="text-center py-1">{{ $vr->time_all }}</td>
