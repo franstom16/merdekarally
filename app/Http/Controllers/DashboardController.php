@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $raceClass  = RaceClass::get();
         foreach ($raceClass as $rc)
         {
-            $rank[$rc] = [
+            $rank[$rc->class_name] = [
                 'Individu'  => vAssessmentIndividualScore::where('class_code', $rc->class_code)->get(),
                 'Team'      => vAssessmentTeamScore::where('class_code', $rc->class_code)->get()
             ];
