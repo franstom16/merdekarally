@@ -70,6 +70,22 @@
                             <td class="text-center p-1">{{ $n++ }}</td>
                             <td class="py-1">{{ $kv == 'Individu' ? $vr->participant_name : $vr->team_name }}</td>
                             <td class="text-center py-1">{{ $kv }}</td>
+                            <td class="text-center py-1">{{ $vr->race_result }}</td>
+                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">{{ $vr->time_post1 }}</td>
+                            <td class="text-center py-1">{{ $vr->score_post1 }}</td>
+                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">{{ $vr->time_post2 }}</td>
+                            <td class="text-center py-1">{{ $vr->score_post2 }}</td>
+                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">{{ $vr->time_post3 }}</td>
+                            <td class="text-center py-1">{{ $vr->score_post3 }}</td>
+                            <td class="text-center py-1"></td>
+                            <td class="text-center py-1">{{ $vr->time_finish }}</td>
+                            <td class="text-center py-1">{{ $vr->score_finish }}</td>
+                            <td class="text-center py-1">{{ $vr->time_all }}</td>
+                            <td class="text-center py-1">{{ $vr->score_all_time }}</td>
                         </tr>
                     @endforeach
                 @endforeach
