@@ -22,7 +22,7 @@
     </head>
     <body>
         <!-- Page header -->
-	    <div class="page-header page-header-dark">
+	    <div class="page-header page-header-dark" style="background-image: url({{ asset('img/sponsor.png') }}); background-size: contain;">
             <!-- Main navbar -->
             <div class="navbar navbar-expand-md navbar-dark border-transparent">
                 <div class="navbar-brand wmin-0 mr-5">
