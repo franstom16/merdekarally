@@ -67,8 +67,9 @@
                     @php $n = 1 @endphp
                     @foreach ($v_rank as $vr)
                         <tr>
-                            <td>{{ $n++ }}</td>
+                            <td class="text-center">{{ $n++ }}</td>
                             <td>{{ $kv == 'Individu' ? $vr->participant_name : $vr->team_name }}</td>
+                            <td class="text-center">{{ $kv }}</td>
                         </tr>
                     @endforeach
                 @endforeach
